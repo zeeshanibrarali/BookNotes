@@ -3,14 +3,18 @@
 BookNotes is a web application designed to manage and organize your book collection. It provides features for adding, editing, and deleting book entries, as well as fetching additional details about each book from an external API. The application is built using Express.js, PostgreSQL for the database, and Bootstrap for styling.
 
 ## Features
-<img src="./public/images/home.PNG" width="500" alt="Home Page">
 - **Home Page**: View a list of books with details fetched from an external API.
-<img src="./public/images/book.PNG" width="500" alt="Book details">
+<img src="./public/images/home.PNG" width="500" alt="Home Page">
+
 - **Book Details**: Get detailed information about a specific book, including cover image, author, and ISBN.
-<img src="./public/images/add.PNG" width="500" alt="Add Book">
+<img src="./public/images/book.PNG" width="500" alt="Book details">
+
 - **Add Book**: Add a new book to the collection with key principles, quotes, actions to take, personal reflections, rating, and submission date.
-<img src="./public/images/edit.PNG" width="500" alt="Edit Book">
+<img src="./public/images/add.PNG" width="500" alt="Add Book">
+
 - **Edit Book**: Modify existing book details, updating specific fields.
+<img src="./public/images/edit.PNG" width="500" alt="Edit Book">
+
 - **Delete Book**: Remove a book from the collection.
 - **Search**: Search for books by title or author.
 
