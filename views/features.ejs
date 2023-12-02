@@ -1,0 +1,57 @@
+<%- include("partials/header"); -%>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+
+  #featuresContainer {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #featuresHeading {
+    font-size: 24px;
+    color: #1abc9c;
+    margin-bottom: 20px;
+  }
+
+  .feature ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .feature li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #2c3e50;
+  }
+
+  strong {
+    color: #20c997;
+  }
+</style>
+
+
+  <h1 id="featuresHeading">Application Features</h1>
+<div class="feature">
+  <ul>
+    <li><strong>Express Setup:</strong> The application uses the Express framework for handling HTTP requests and responses.</li>
+    <li><strong>Database Interaction:</strong> PostgreSQL is used as the database, and the pg library is employed to interact with it. There are queries to retrieve books from the database.</li>
+    <li><strong>EJS Templating:</strong> Views are rendered using the EJS templating engine, allowing dynamic content to be embedded in HTML templates.</li>
+    <li><strong>API Integration:</strong> The code interacts with an external API to fetch book details (getBookDetails function) and updates the database with ISBN and cover URL information.</li>
+    <li><strong>Routing:</strong> The application defines routes for handling different URLs, such as displaying the home page and individual book details.</li>
+    <li><strong>Middleware:</strong> The application uses middleware like body-parser to parse incoming request bodies and express.static to serve static files.</li>
+    <li><strong>Error Handling:</strong> There is basic error handling for database queries and other operations.</li>
+    <li><strong>HTML and CSS:</strong> The EJS templates include HTML and inline CSS for styling.</li>
+    <li><strong>Dynamic Rendering:</strong> Books are dynamically rendered on the home page, and individual book details are rendered on their respective pages.</li>
+    <li><strong>Server Setup:</strong> The server is set up to listen on port 3000, and there's a log statement indicating when the server is running.</li>
+  </ul>
+</div>
+
+<%- include("partials/footer"); -%>

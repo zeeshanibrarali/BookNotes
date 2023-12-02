@@ -1,0 +1,30 @@
+<%- include("partials/header"); -%>
+<div style="font-size: 15px;">
+  <h1><%= book.title %></h1>
+
+  <div>
+    <img class="Image maxSizeImage" src="<%= book.cover_url %>" alt="Book Cover">
+  </div>  
+  <strong>Rating:</strong> <%= book.rating %><br>
+  <strong>Date:</strong> <%= book.submit_date ? book.submit_date.toDateString() : 'Not available' %><br>
+  <p style="margin: 0;"><strong>ISBN:</strong> <%= book.isbn %></p>
+  <p style="margin: 0;"><strong>Author:</strong> <%= book.author %></p>   
+  <div style="width: 70%;">                        
+    <p class="content" style="margin-top: 10px;">
+      <strong>Notes: <br></strong><%= book.key_principles.replace(/\n/g, '') %></p>
+    <h2>Quotes:</h2>
+    <p><%= book.quotes.replace(/\n/g, '') %></p>
+    <h2>Actions to take:</h2>
+    <p><%= book.actions_to_take.replace(/\n/g, '') %></p>
+    <h2>Personal reflections:</h2>
+    <p><%= book.personal_reflections.replace(/\n/g, '') %></p>
+  </div> 
+  <form action="/edit/<%= book.id %>" method="get" style="display: inline;">
+    <button type="submit" style="background-color: #1abc; width: 20%; color: #fff; border: none; cursor: pointer;">Edit</button>
+  </form>
+  <form action="/delete/<%= book.id %>" method="post" style="display: inline;">
+    <button type="submit" style="background-color: #dc3545; color: #fff; border: none; cursor: pointer;">Delete</button>
+  </form>
+
+</div>
+<%- include("partials/footer"); -%>

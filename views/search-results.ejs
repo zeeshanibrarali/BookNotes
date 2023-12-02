@@ -1,0 +1,29 @@
+<%- include("partials/header"); -%>
+
+<style>
+    body{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        flex: 1;
+    }
+</style>
+
+<div class="container">
+  <h1>Search Results</h1>
+
+  <% if (results.length === 0) { %>
+    <p>No results found.</p>
+  <% } else { %>
+    <ul>
+      <% results.forEach(result => { %>
+        <li><a href="/book/<%= result.id %>"><%= result.title %></a> by <%= result.author %></li>
+      <% }); %>
+    </ul>
+  <% } %>
+</div>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,88 @@
+<%- include("partials/header"); -%>
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+  #aboutContainer, #contactContainer {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  hr{
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    color: #1abc9c;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #2c3e50;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+
+</style>
+
+<div id="aboutContainer">
+  <% if (isContactRoute) { %>
+    <h1 id="aboutHeading">BookNotes</h1>
+    <p>Welcome to BookNotes! I am Zeeshan Ibrar, and this is my book notes. It includes my notes that I make while reading, how much I recommend the book to you, and some key principles, quotes, actions to take, and personal reflection that I get in the process.</p><hr>
+    <p>I’ve optimized my life for creating and learning. I’ve cut out most things from my life that most normal people do — (like hanging out or media consumption) — in pursuit of my bigger goal.</p><hr>
+    <p>I make friends easily. They come and go based on life circumstances.</p>
+  <% } else { %>
+    <h1 id="aboutHeading">Zeeshan Ibrar</h1>
+    <h2>Contact:</h2>
+    <p>Email me at <a href="mailto:zeeshanibrar10987@gmail.com">zeeshanibrar10987@gmail.com</a></p>
+    <p>Tell me something about yourself, like where on earth (nearest city) you’re emailing from.</p>
+    <p>Include any URLs about you.</p>
+    <p>I like knowing people around the world.</p>
+    <p>
+      <strong>
+      I reply to every email within about a week.
+      </strong>
+      So if you don’t see a reply, check your spam folder.
+      </p>
+  <% } %>
+</div>
+
+
+<%- include("partials/footer"); -%>

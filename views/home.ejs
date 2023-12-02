@@ -1,0 +1,64 @@
+<%- include("partials/header"); -%>
+
+<h1>ZEESHAN IBRAR</h1>
+
+<h2>BOOKS I'VE READ</h2>
+
+<p class="intro">
+    Each has a brief overview, but thorough notes. Use the ISBN number to find it at your local library or anywhere else. <br> 
+    This website will be updated as I read more, so bookmark it and come back in a few months.
+</p>
+
+<p class="sort">Sorted with my top suggestions at the top.
+    <button onclick="sortList('title')" class="btn btn-outline-custom btn-lg">Sort by Title</button>
+    <button onclick="sortList('newest')" class="btn btn-outline-custom btn-lg">Sort by Newest</button>
+    <button onclick="sortList('best')" class="btn btn-outline-custom btn-lg">Sort by Best</button>
+</p>
+
+<ul class="list-group mt-3" id="recommendationsList">
+    <% books.forEach(function(book){ %>
+        <li class="list-group-item" data-title="<%= book.title %>" data-date="<%= book.date %>" data-rating="<%= book.rating %>">
+            <div style="white-space: nowrap;">
+                <strong>Title:</strong> <span style="font-weight: bold;"><%= book.title %></span><br>
+                <strong>Description:</strong> <%= book.key_principles.slice(0, 35)+' ... ' %>
+                <a href="/book/<%= book.id%>">Read More</a><br>
+                <strong>Rating:</strong> <%= book.rating %><br>
+                <strong>Date:</strong> <%= book.submit_date ? book.submit_date.toDateString() : 'Not available' %>
+                <p style="margin-top: 5px;"><strong>ISBN:</strong> <%= book.isbn %></p>
+                <p style="margin-bottom: 5px;"><strong>Author:</strong> <%= book.author %></p>
+            </div>
+            <div  class="cover" style="flex-shrink: 0; margin-left: 50%;">
+                <img class="Image" src="<%= book.cover_url %>" alt="Book Cover">
+            </div>
+        </li>
+    <% }) %>
+</ul>
+
+<script>
+    function sortList(criteria) {
+        var list = document.getElementById("recommendationsList");
+        var items = Array.from(list.children);
+
+        switch (criteria) {
+            case 'title':
+                items.sort((a, b) => a.dataset.title.localeCompare(b.dataset.title));
+                break;
+            case 'newest':
+                items.sort((a, b) => new Date(b.dataset.submitDate) - new Date(a.dataset.submitDate));
+                break;
+            case 'best':
+                items.sort((a, b) => b.dataset.rating - a.dataset.rating);
+                break;
+        }
+
+        // Clear the list
+        list.innerHTML = "";
+
+        // Append the sorted items to the list
+        items.forEach(item => {
+            list.appendChild(item);
+        });
+    }
+</script>
+
+<%- include("partials/footer"); -%>
