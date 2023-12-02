@@ -23,7 +23,7 @@ BookNotes is a web application designed to manage and organize your book collect
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/zeeshanibrarali/BookNotes
 ```
 
 2. Dependencies
